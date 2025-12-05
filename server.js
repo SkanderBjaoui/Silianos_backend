@@ -6,7 +6,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['https://silianos-ng.onrender.com', 'http://localhost:4200'],
+  origin: ['https://silianos.onrender.com', 'https://silianos-ng.onrender.com', 'http://localhost:4200'],
   credentials: true
 }));
 app.use(express.json());
