@@ -105,14 +105,14 @@ exports.userRegister = async (req, res) => {
 
 exports.login = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password) {
-      return res.status(400).json({ error: 'Username and password are required' });
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
     }
 
     const user = await AdminUser.findOne({ 
-      username: username,
+      email: email.toLowerCase(),
       is_active: true 
     });
 
